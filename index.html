@@ -201,24 +201,34 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <script>
+                            function process()
+                            {
+                                var url = "https://wa.me/+6282234520898?text=" + "Nama:" + document.getElementById("url").value + "Nomor WA:" + document.getElementById("phone").value;
+                                location.href = url;
+                                return false;
+                            }
+                        </script>
+                        <form onsubmit="return process();">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nama</label>
-                                    <input class="form-control" id="name" type="text" placeholder="Nama" required="required" data-validation-required-message="Please enter your name." />
+                                    <input class="form-control" id="url" name="url" type="text" placeholder="Nama" required="required" data-validation-required-message="Please enter your name." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nomor Whatsapp</label>
-                                    <input class="form-control" id="phone" type="tel" placeholder="Nomor Whatsapp" required="required" data-validation-required-message="Please enter your phone number." />
+                                    <input class="form-control" id="phone" name="phone" type="tel" placeholder="Nomor Whatsapp" required="required" data-validation-required-message="Please enter your phone number." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+
                             <br />
                             <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" type="submit" value="go">Send</button></div>
                         </form>
                     </div>
                 </div>
