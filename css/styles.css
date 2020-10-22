@@ -10307,3 +10307,7 @@ form .row:first-child .floating-label-form-group {
   height: 50%;
   background-size: 100%;
 }
+
+.width-100{
+  max-width: 100%;
+}
